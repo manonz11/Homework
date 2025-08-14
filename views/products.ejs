@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Product List</title>
+  <style>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Product List</h1>
+
+  <div class="grid">
+    <% products.forEach(product => { %>
+      <div class="card">
+        <img src="<%= product.image_url %>" alt="<%= product.name %>" />
+        <h3><%= product.name %></h3>
+        <p><%= Number(product.price).toLocaleString() %> บาท</p>
+      </div>
+    <% }) %>
+  </div>
+
+</body>
+</html>
